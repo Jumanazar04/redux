@@ -3,6 +3,8 @@ const initialState = {
 }
 
 const taskReducer = (state = initialState, action) =>{
+    
+    console.log(state.tasks);
     switch (action.type) {
         case "ADD_TASK":
             return {

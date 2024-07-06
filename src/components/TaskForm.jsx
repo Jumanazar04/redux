@@ -11,14 +11,14 @@ function TaskForm() {
         setTaskName(e.target.value);
     }
 
+
     const handleSave = () => {
             dispatch(addTodo(taskName));
             setTaskName(''); 
         
     };
-    console.log(taskName);
     return (
-        <div className='w w-screen h-screen flex justify-center items-center'>
+        <div className='w w-screen mt-40 mb-5 flex justify-center items-center'>
             <div className=' w-1/3 flex flex-col gap-4 p-4 border rounded-lg'>
                 <label htmlFor="name">Task Name</label>
                 <Input type="text" id='name' placeholder='Task...' value={taskName} onChange={handleChange} />

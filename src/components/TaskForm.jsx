@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodo } from '../Redux/actions';
-import { Button, Input } from 'antd';
+import { Button, Input, message } from 'antd';
 
 function TaskForm() {
     const dispatch = useDispatch();
@@ -11,11 +11,15 @@ function TaskForm() {
         setTaskName(e.target.value);
     }
 
-
+    
     const handleSave = () => {
+        if(taskName){
             dispatch(addTodo(taskName));
             setTaskName(''); 
-        
+            message.success('Task added successfuly')
+        }else{
+        message.error("Please enter task")
+        }
     };
     return (
         <div className='w w-screen mt-40 mb-5 flex justify-center items-center'>

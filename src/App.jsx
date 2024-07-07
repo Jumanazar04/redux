@@ -1,12 +1,10 @@
 import './App.css';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
+import Porduct from './components/Product/porduct';
 
 function App() {
   return (
     <div className="App">
-      <TaskForm />
-      <TaskList />
+      <Porduct />
     </div>
   );
 }

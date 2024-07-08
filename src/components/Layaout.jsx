@@ -3,9 +3,10 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 function Layaout() {
   return (
-    <div className='container mx-auto'>
-         <nav className=' flex justify-evenly items-center text-2xl font-bold bg-slate-200 py-4 border'>
-            <NavLink   className={({ isActive, isPending }) =>
+    <div className=' mx-auto'>
+         <nav className=' bg-slate-200 py-4 border'>
+          <div className=' container mx-auto flex justify-evenly items-center text-2xl font-bold'>
+          <NavLink   className={({ isActive, isPending }) =>
                  isPending ? "pending" : isActive ? "text-red-600 underline" : ""
                 } to={'/'}>Home</NavLink>
             <NavLink   className={({ isActive, isPending }) =>
@@ -14,8 +15,10 @@ function Layaout() {
             <NavLink   className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-red-600 underline" : ""
                 } to={'/category'}>Categories</NavLink>
+          </div>
+
         </nav>
-        <main>
+        <main className='container mx-auto py-12 px-14'>
             <Outlet />
         </main>
         <footer>
